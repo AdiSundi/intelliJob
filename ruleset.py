@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import urllib.request
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 import pandas as pd
+import json
 
 user_agent = \
     'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -32,3 +33,13 @@ for index, row in df.iterrows():
                 dict_table[iter][function].append(list_role)
             else:
                 dict_table[iter][function].append(list_role)
+
+dict_overall = {}
+
+for key in dict_table:
+    temp_list = []
+    for key2 in dict_table[key]:
+        for i in dict_table[key][key2]:
+            temp_list.extend(i)
+    dict_overall[key]=temp_list
+print(json.dumps(dict_overall,indent=2))
