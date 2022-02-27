@@ -24,13 +24,15 @@ _An NLP powered algorithm that uses past employement data to scout and provide y
 3. ` ruleset.py ` - generates a rule binding between jobs and the disability classes based on past employment data found through web url scraping
 4.  ` world_cluster_predictor.py ` - creates the NLP model, saves it, and reads through the job posting database, preparing it for impairment tag addition
 5.  `model_ODE.py ` - loads our NLP model, runs it on the test data, adds the tag for the impairment suitability and exports it to a spreadsheet form.
-6.  Along with these scripts, some additional scripts were written to help clean and regulate our databases, but they have not been added here as they are standard     pandas dataframe cleaning functions.
-7.  The .txt files contain standardised data generated from past employment data to help us find key words for jobs secured by people with different impairments
+6.  `StochasticPredictor.ipynb` - Predicts job suitability likelihood using a Stochastic Gradient Descent Regression algorithm over a Bag of Words model of hand picked data set
+7.  Along with these scripts, some additional scripts were written to help clean and regulate our databases, but they have not been added here as they are standard     pandas dataframe cleaning functions.
+8.  The .txt files contain standardised data generated from past employment data to help us find key words for jobs secured by people with different impairments
 
 ### Spread Sheets:
 1. `300_job_listings.xls` - 300 job postings from Indeed, cleaned up
 2. `Rated_650JobPostings_cleaned.xlsx` - 650 job postings from Indeed, cleaned up
-3. `indeed_ODE.csv` - output from our NLP algorithm, with job suitability rating for each impairment tag
+3. `indeed_ODE.csv` - output from our Gensin/FastText NLP algorithm, with job suitability rating for each impairment tag
+4. `indeed_ODE_average.csv` - output that combines the results of both our Stochastic Gradient Descent Regression algorithm along with the Gensin/FastText NLP algorithm, with job suitability rating for each impairment tag
 
 ## Algorithm Flow Chart:
 ![Alt text](./workflow1.png?raw=true "Workflow")
