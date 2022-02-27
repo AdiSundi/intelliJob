@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+'''Program to generate a rule binding between jobs and disability classes through web url scraping'''
+
+# Import libraries
 import pandas as pd
 import json
 
@@ -9,7 +12,7 @@ def ruleset_func():
 
     df=pd.read_html(url)[0]
 
-    # Make list of roles for LV impairment
+    # Make list of roles for disability classes
     dict_table={'LV':{}, 'HI': {}, 'MPD': {}, 'PD': {}, 'CP': {}, 'SCI': {}, 'ASD': {}}
     dict_key_list=list(dict_table.keys())
     for index, row in df.iterrows():

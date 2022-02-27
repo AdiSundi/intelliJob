@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+'''Program to generate txt files consisting of clean rule bindings by training an NLP model after NLP pipeline cleaning'''
+
+# Import libraries
 from matplotlib.pyplot import cla
 import nltk
 nltk.download('stopwords')
@@ -52,5 +55,3 @@ model = fasttext.train_unsupervised('trainingList.txt', minCount=1)
 if __name__=="__main__":
     get_op_words()
     write_to_txt()
-
-#model = fasttext.train_unsupervised('trainingList.txt', minCount=1)

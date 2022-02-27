@@ -7,6 +7,8 @@ import stanza
 stanza.download('en')
 stanza_nlp = stanza.Pipeline('en')
 
+'''Program consisting of the NLP pipeline cleaning for generating clean rule bindings'''
+
 '''Convert from list to String'''
 def listToString(s): 
     
