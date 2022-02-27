@@ -19,11 +19,11 @@ model_dict={'LV':model_LV, 'HI':model_HI, 'MPD':model_MPD, 'PD':model_PD, 'CP':m
 
 # Make the model and train
 for dis in list_dis:
-    if os.path.isfile(dis+'.txt'):
+    if os.path.isfile('ruletext/'+dis+'.txt'):
         continue
     else:
         print ("Generating model!")
-        model = fasttext.train_unsupervised(dis+'.txt', minCount=1)
+        model = fasttext.train_unsupervised('ruletext/'+dis+'.txt', minCount=1)
         model.save_model(dis+'.bin')
 
 # Load the model 

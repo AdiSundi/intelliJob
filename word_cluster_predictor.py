@@ -15,6 +15,7 @@ import job_smartFilter as filter
 from nltk.tokenize import sent_tokenize, word_tokenize
 import warnings
 import fasttext
+import os
 
 #Import the ruleset file
 from ruleset import ruleset_func
@@ -42,15 +43,15 @@ def get_op_words():
                 temp_str+=(j+'-')
             dict_op_words[class_dis].append(temp_str[0:-1])
 
+'''Create directory for txt files'''
+if not os.path.exists('ruletext'):
+    os.makedirs('ruletext')
+
 '''Write to txt files'''
 def write_to_txt():
     for class_dis in list(dict_keywords.keys()):
-        with open(str(class_dis)+'.txt', 'w') as f: 
+        with open('ruletext/'+str(class_dis)+'.txt', 'w') as f: 
             f.write(' '.join(dict_op_words[class_dis]))
-
-# Use model to predict
-
-model = fasttext.train_unsupervised('trainingList.txt', minCount=1)
 
 if __name__=="__main__":
     get_op_words()
