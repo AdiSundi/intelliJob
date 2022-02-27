@@ -33,7 +33,7 @@ _An NLP powered algorithm that uses past employement data to scout and provide y
 3. `indeed_ODE.csv` - output from our NLP algorithm, with job suitability rating for each impairment tag
 
 ## Algorithm Flow Chart:
-![Alt text](./workflow.png?raw=true "Workflow")
+![Alt text](./workflow1.png?raw=true "Workflow")
 
 
 ## DISCLAIMER : This project does not condone web scraping/web crawling in any way. Please follow rules set by the robots.txt file for each job portal. This web scraper was used purely for the hackathon, the end goal is to provide this to Indeed to integrate into their portal as a feature.
